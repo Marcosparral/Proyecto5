@@ -1,4 +1,5 @@
-import { Header } from "../../components/header/Header"
+import { Contador } from "../../components/header/contador/Contador"
+import { Header } from "../../components/header/header/Header"
 
 export const Home = () => {
     return (
@@ -9,6 +10,7 @@ export const Home = () => {
             color="info" />
 
             <h2>Esto deberia borrarse despues</h2>
+            <Contador />
         </>
     )
 }
