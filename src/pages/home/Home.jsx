@@ -1,16 +1,20 @@
-import { Contador } from "../../components/header/contador/Contador"
+import { Contador } from "../../components/contador/Contador"
 import { Header } from "../../components/header/header/Header"
+import { InputBusqueda } from "../../components/input/InputBusqueda"
 
 export const Home = () => {
     return (
         <>
             <Header 
             title="Bienvenidos al proyecto 5" 
-            subtitle="ESto es una pagina web diseñada para el consumo de una API" 
+            subtitle="Esto es una pagina web diseñada para el consumo de una API" 
             color="info" />
 
-            <h2>Esto deberia borrarse despues</h2>
+            <h2>Esta pagina se centra en llamar a una Api externa de toda la saga de Dragon Ball </h2>
             <Contador />
+            <div>
+                <InputBusqueda />
+            </div>
         </>
     )
 }

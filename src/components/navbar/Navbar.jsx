@@ -6,6 +6,7 @@ export const Navbar = () => {
             <ul>
                 <Link to={'/'}>Inicio</Link>
                 <Link to={'/about'}>Sobre Nosotros</Link>
+                <Link to={'/character'}>Personajes</Link>
             </ul>
         </nav>
     )
