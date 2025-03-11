@@ -6,7 +6,7 @@ export const Navbar = () => {
             <ul>
                 <Link to={'/'}>Inicio</Link>
                 <Link to={'/about'}>Sobre Nosotros</Link>
-                <Link to={'/character'}>Personajes</Link>
+                <Link to={'/digimon'}>Personajes</Link>
             </ul>
         </nav>
     )

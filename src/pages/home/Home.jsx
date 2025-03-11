@@ -10,7 +10,7 @@ export const Home = () => {
             subtitle="Esto es una pagina web diseñada para el consumo de una API" 
             color="info" />
 
-            <h2>Esta pagina se centra en llamar a una Api externa de toda la saga de Dragon Ball </h2>
+            <h2>Esta pagina se centra en llamar a una Api externa </h2>
             <Contador />
             <div>
                 <InputBusqueda />
