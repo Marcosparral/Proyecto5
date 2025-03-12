@@ -1,4 +1,4 @@
-import { Contador } from "../../components/contador/Contador"
+
 import { Header } from "../../components/header/header/Header"
 import { InputBusqueda } from "../../components/input/InputBusqueda"
 
@@ -11,7 +11,7 @@ export const Home = () => {
             color="info" />
 
             <h2>Esta pagina se centra en llamar a una Api externa </h2>
-            <Contador />
+            
             <div>
                 <InputBusqueda />
             </div>

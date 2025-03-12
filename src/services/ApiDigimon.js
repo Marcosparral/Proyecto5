@@ -13,3 +13,15 @@ export const getAllPersonajes = async () => {
     }
 }
 
+export const getPersonajeByName = async (request) => {
+    try {
+        const response = await fetch(`${URL_BASE}/digimon/${request}`);
+        if (!response.ok) throw new Error('No se pudo obtener la información');
+        
+        const data = await response.json();
+        return data;
+    }   
+    catch (error) {
+        throw new Error('Error en la petición'(error));
+    }
+}

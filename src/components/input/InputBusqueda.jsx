@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-export const InputBusqueda = () => {
-    const [ textInput, setTextInput ] = useState('');
+export const InputBusqueda = ({placeholderText, onSearch}) => {
+    const [ digimonBuscado, setDigimonBuscado ] = useState('');
 
-    const handleSubmit = (event) => {
-        setTextInput(event.target.value);
-        console.log(event.target.value);
+    const handleSearch = (event) => {
+        setDigimonBuscado(event.target.value);
+        onSearch(event.target.value);
 
     }
 
@@ -13,13 +13,11 @@ export const InputBusqueda = () => {
         <>
             <input 
             type='text' 
-            placeholder='Buscar...'
-            value={textInput}
-            onChange={handleSubmit}
+            placeholder={placeholderText}
+            value={digimonBuscado}
+            onChange={handleSearch}
             />
-            <button onClick={handleSubmit}>Buscar</button>
-
-            <p>Escribiste: {textInput}</p>
+            
         </>
     )
 }

@@ -3,11 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 20rem;
+    width: 10rem;
     padding: 1rem;
-    gap: 8rem;
+    gap: 5rem;
     flex-wrap: wrap;
-    border-radius: 20px;
+    border-radius: px;
     box-shadow: 0 0 25px #acacac;
     transition: 0.3s;
 }
@@ -30,12 +30,15 @@
     height: auto;
     border-radius: 5px;
     box-shadow: 0 0 10px #acacac;
+    transition: 0.3s;
 }
 
 .card-header_title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ff0000;
-    text-shadow: 2px 2px 2px #000;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    color: #050505;
+    text-shadow: 2px 2px 2px #ff0000;
+
 }
 
