@@ -7,8 +7,8 @@ export const getAllCharacters = async () => {
             throw new Error('Error al obtener los personajes');
 
             const data = await response.json();
-            console.log(data.results)
-            return (data.results);
+            console.log(data)
+            return (data);
         
         
         } catch (error) {

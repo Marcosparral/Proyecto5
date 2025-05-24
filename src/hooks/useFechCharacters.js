@@ -9,7 +9,7 @@ export const useFetchCharacters = () => {
         const handleApiResponse = async () => {
             try {
                 const characterResponse = await getAllCharacters();
-                setCharacters([...characterResponse.content]);
+                setCharacters([...characterResponse.results]);
             } catch (error) {
             (error)
             };
