@@ -6,7 +6,7 @@ export const Navbar = () => {
             <nav className="navbar">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">Home</a>
-                    <a className="navbar-brand" href="/character">Characters</a>
+                    <a className="navbar-brand" href="/character">Personajes</a>
                 </div>
             </nav>
         </header>

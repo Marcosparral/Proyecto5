@@ -4,6 +4,8 @@ import { getAllCharacters, getCharacterByName } from "../services/fetchRick";
 export const useFetchCharacters = () => {
 
     const [characters, setCharacters] = useState ([]);
+    const [page, setPage] = useState(+1)
+    
 
     useEffect(() => {
         const handleApiResponse = async () => {
@@ -18,7 +20,7 @@ export const useFetchCharacters = () => {
 
         handleApiResponse();
 
-    }, []);
+    }, [page]);
 
     return characters
 }
@@ -48,4 +50,5 @@ export const useFetchCharacterByname = (nameOrId) => {
         loading
     ]
 }
+
                 

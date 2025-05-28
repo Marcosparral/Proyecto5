@@ -1,14 +1,16 @@
-const URL_BASE = 'https://rickandmortyapi.com/api';
+const URL_BASE = 'https://rickandmortyapi.com/api/character';
+
 
 export const getAllCharacters = async () => {
     try {
-        const response = await fetch(`https://rickandmortyapi.com/api/character`);
+        const response = await fetch(`${URL_BASE}`);
         if (!response.ok) 
             throw new Error('Error al obtener los personajes');
 
             const data = await response.json();
             console.log(data)
             return (data);
+            
         
         
         } catch (error) {
@@ -29,6 +31,25 @@ export const getCharacterByName = async (request) => {
         } catch (error) {
             console.error('Error al buscar el personaje', error);
             throw new Error;
+        };
+};
+
+export const getAllPages = async () => {
+    try {
+        const response = await fetch(`${URL_BASE}/?page=${page}`);
+        if (!response.ok) 
+            throw new Error('Error al obtener los personajes');
+
+            const data = await response.json();
+            console.log(data)
+            return (data);
+            
+        
+        
+        } catch (error) {
+            console.error('Error al buscar los personajes', error);
+            throw new Error;
+            
         };
 };
 
