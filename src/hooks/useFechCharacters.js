@@ -1,54 +1,34 @@
 import { useEffect, useState } from "react";
-import { getAllCharacters, getCharacterByName } from "../services/fetchRick";
+//import { getAllCharacters } from "../services/fetchRick";
 
-export const useFetchCharacters = () => {
+export const useFetchCharacters = (page) => {
 
     const [characters, setCharacters] = useState ([]);
-    const [page, setPage] = useState(+1)
+    const [totalPages, setTotalPages ] = useState(null)
+    const [loading, setLoading] = useState(null)
     
-
     useEffect(() => {
-        const handleApiResponse = async () => {
+        const fetchCharacters = async () => {
             try {
-                const characterResponse = await getAllCharacters();
-                setCharacters([...characterResponse.results]);
+                setLoading(true)
+                const response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
+                if (!response) throw new Error('Error al cargar los personajes')
+                const data = await response.json()
+            setCharacters(data.results);
+            setTotalPages(data.info.pages)
+            setLoading(false)
             } catch (error) {
             (error)
+            setLoading(false)
             };
             
         };
 
-        handleApiResponse();
+        fetchCharacters();
+        
 
-    }, [page]);
+    },[page]);
 
-    return characters
+    return { characters, totalPages, loading }
 }
 
-export const useFetchCharacterByname = (nameOrId) => {
-    const [character, setCharacter] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const handleApiResponse = async () => {
-            try {
-                const characterResponse = await getCharacterByName(nameOrId);
-                setCharacter({...characterResponse});
-            } catch (error) {
-                console.error('Error al obtener el personaje', error);
-            } finally {
-                setLoading(false);
-            }
-
-        };
-
-        handleApiResponse()
-    }, []);
-
-    return [
-        character,
-        loading
-    ]
-}
-
-                
