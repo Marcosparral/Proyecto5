@@ -9,7 +9,7 @@ h1 {
     justify-content: center;
     display: flex;
     padding: 2rem;
-    font-size: xx-large;
+    font-size: 50px;
 }
 .pagination {
     display: flex; 
@@ -23,9 +23,10 @@ h1 {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 20px;
     display: inline-block;
-    margin-bottom: 20px;
+    
+    
   }
   
   .next {
@@ -34,9 +35,9 @@ h1 {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 20px;
     display: inline-block;
-    margin-bottom: 20px;
+   
   }
   
   .prev:hover, .next:hover {

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-//import { getAllCharacters } from "../services/fetchRick";
 
 export const useFetchCharacters = (page) => {
 
@@ -32,3 +31,39 @@ export const useFetchCharacters = (page) => {
     return { characters, totalPages, loading }
 }
 
+export const useSearchCharacters = (searchTerm) => {
+    const [results, setResults] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+  
+    useEffect(() => {
+      const search = async () => {
+        if (!searchTerm) return;
+  
+        setLoading(true);
+        setError(null);
+  
+        try {
+          const response = await fetch(`${BASE_URL}?name=${searchTerm}`);
+          if (!response.ok) {
+            if (response.status === 404) {
+              setResults([]); // No hay resultados
+            } else {
+              throw new Error('Error al buscar personajes');
+            }
+          } else {
+            const data = await response.json();
+            setResults(data.results);
+          }
+        } catch (err) {
+          setError(err.message);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      search();
+    }, [searchTerm]);
+  
+    return { results, loading, error };
+  };
