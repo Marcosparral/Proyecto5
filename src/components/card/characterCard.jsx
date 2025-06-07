@@ -1,4 +1,4 @@
-import './characterCard.css';
+import './charactercard.css';
 
 
 export const CharacterCard = ( character ) => {
