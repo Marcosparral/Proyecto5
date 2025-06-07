@@ -1,14 +1,15 @@
-import './Header.css'
+import React from 'react';
+import './Header.css';
 
 export const Navbar = () => {
-    return (
-        <header className='container-header'>
-            <nav className="navbar">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="/">Home</a>
-                    <a className="navbar-brand" href="/character">Personajes</a>
-                </div>
-            </nav>
-        </header>
-    )
+  return (
+    <header className="navbar">
+      <div className="navbar-overlay">
+        <nav className="navbar-content">
+          <a className="nav-button" href='/'>Home</a>
+          <a className="nav-button" href='/character'>Personajes</a>
+        </nav>
+      </div>
+    </header>
+  );
 };

@@ -10,12 +10,14 @@ export const CharacterList = () => {
     const { characters, totalPages, loading } = useFetchCharacters(page)
 
     const nextPage = () => {
-        if (page < totalPages) setPage((prev) => prev + 1);
-      };
+        if (page < totalPages) 
+            setPage((prev) => prev + 1);
+        };
     
       const prevPage = () => {
-        if (page > 1) setPage((prev) => prev - 1);
-      };
+        if (page > 1) 
+            setPage((prev) => prev - 1);
+        };
     
       if (loading) return <p>Cargando...</p>;
     
@@ -27,12 +29,13 @@ export const CharacterList = () => {
             <h1>Lista de personajes</h1>
                 <div class='pagination'>
                     <button onClick={prevPage} disabled={page === 1} class='prev'>Anterior</button>
-                        <span style={{ margin: '0 10px' }}>Página {page} de {totalPages}</span>
+                        
                     <button onClick={nextPage} disabled={page === totalPages} class='next'>Siguiente</button>
                 </div>
                 <div className='card-container'>
                 {characters.map((character) => (
                     <CharacterCard key={character.id}
+                        id={character.id}
                         image={character.image}
                         name={character.name}
                         species={character.species}
@@ -42,7 +45,7 @@ export const CharacterList = () => {
             </div>
             <div class='pagination'>
                     <button onClick={prevPage} disabled={page === 1} class='prev'>Anterior</button>
-                        <span style={{ margin: '0 10px' }}>Página {page} de {totalPages}</span>
+                        
                     <button onClick={nextPage} disabled={page === totalPages} class='next'>Siguiente</button>
                 </div>
         </main>

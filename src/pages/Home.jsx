@@ -1,11 +1,10 @@
 
-import { InfoSection } from '../components/infoSeccion/InfoSection';
+import { HomePage } from '../components/infoSeccion/InfoSection.jsx';
 
 export const Home = () => {
     return (
         <>
-            <InfoSection 
-                infoTitle='Rick And Morty '
+            <HomePage 
                 generalInfo='Acá encontraras toda la info acerca de los personajes de Rick and Mortis'
             />
         </>

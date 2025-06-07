@@ -12,9 +12,9 @@ h1 {
     font-size: xx-large;
 }
 .pagination {
-    display: flex; /* Usa flexbox para alinear los botones */
-    justify-content: center; /* Centra los botones horizontalmente */
-    align-items: center; /* Centra los botones verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
   }
   
   .prev {
@@ -23,8 +23,8 @@ h1 {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin: 0 5px; /* Espacio entre los botones */
-    display: inline-block; /* Permite establecer ancho y alto */
+    margin: 0 5px;
+    display: inline-block;
     margin-bottom: 20px;
   }
   
@@ -34,8 +34,8 @@ h1 {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin: 0 5px; /* Espacio entre los botones */
-    display: inline-block; /* Permite establecer ancho y alto */
+    margin: 0 5px;
+    display: inline-block;
     margin-bottom: 20px;
   }
   
@@ -43,7 +43,6 @@ h1 {
     background-color: #3e8e41;
   }
   
-  /*  Estilos adicionales (opcional) */
   .next {
-    margin-left: 10px; /* Ajusta el espacio a la derecha */
+    margin-left: 10px;
   }
