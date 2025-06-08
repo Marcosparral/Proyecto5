@@ -37,26 +37,56 @@ export const useFetchCharacters = (page) => {
 export const useCharacterSearch = () => {
     const [characters, setCharacters] = useState([]);
     const [error, setError] = useState(null);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const [currentQuery, setCurrentQuery] = useState('');
   
-    const searchCharacters = async (name) => {
+    const searchCharacters = async (name, newPage = 1) => {
       if (!name) return;
   
       try {
-        const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${name}`);
+        const response = await fetch(
+          `https://rickandmortyapi.com/api/character/?name=${name}&page=${newPage}`
+        );
+  
         if (!response.ok) {
           throw new Error('No se encontraron personajes');
         }
   
         const data = await response.json();
         setCharacters(data.results);
+        setTotalPages(data.info.pages);
         setError(null);
+        setCurrentQuery(name);
+        setPage(newPage);
       } catch (err) {
         setCharacters([]);
+        setTotalPages(1);
         setError(err.message);
       }
     };
   
-    return { characters, error, searchCharacters };
+    const nextPage = () => {
+      if (page < totalPages) {
+        searchCharacters(currentQuery, page + 1);
+      }
+    };
+  
+    const prevPage = () => {
+      if (page > 1) {
+        searchCharacters(currentQuery, page - 1);
+      }
+    };
+  
+    return {
+      characters,
+      error,
+      searchCharacters,
+      page,
+      totalPages,
+      nextPage,
+      prevPage,
+    };
   };
   
   
