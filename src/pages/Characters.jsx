@@ -42,7 +42,7 @@ export const CharacterList = () => {
                         status={character.status}
                         type={character.type} />
                 ))}
-            </div>
+                </div>
             <div class='pagination'>
                     <button onClick={prevPage} disabled={page === 1} class='prev'>Anterior</button>
                         

@@ -1,10 +1,20 @@
 .footer {
-    background-color: #222;
-    color: #ccc;
+    background-color: #3f8033;
     text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 15px 0;
+    color: #ffffff;
+    border-top: 1px solid #ccc;
+    margin-top: auto;
+  }
+  
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }

@@ -13,7 +13,10 @@ export const HomePage = ({generalInfo}) => {
         </p>
         <a href='/character' className="home-button">
         Explorar personajes
-      </a>
+        </a>
+        <a href='/search' className="home-button">
+        Busca personajes por su nombre
+        </a>
       </div>
     );
   };
